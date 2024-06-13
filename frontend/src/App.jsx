@@ -4,6 +4,7 @@ import Layout from './routes/Layout/Layout.jsx';
 import SinglePage from '../../frontend/src/routes/singlePage/SinglePage.jsx';
 import ProfilePage from './routes/ProfilePage/ProfilePage.jsx';
 import ListPage from './routes/ListPage/ListPage.jsx';
+import Register from './routes/Register/Register.jsx';
 
 function App() {
 
@@ -27,6 +28,10 @@ function App() {
         {
           path: "/profile",
           element: <ProfilePage />
+        },
+        {
+          path: "/register",
+          element: <Register/>
         }
       ]
     }
