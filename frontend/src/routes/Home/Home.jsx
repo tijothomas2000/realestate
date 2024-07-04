@@ -1,8 +1,13 @@
-import SearchBar from '../../components/SearchBar/SearchBar';
+import SearchBar from '../../components/SearchBar/SearchBar.jsx';
+import { AuthContext } from '../../context/AuthContext.jsx';
 import './Home.scss';
-import React from 'react'
+import { useContext } from 'react';
 
 export default function Home() {
+
+    const {currentUser} = useContext(AuthContext);
+    console.log(currentUser);
+
     return (
         <div className='home'>
             <div className="textcontainer">
