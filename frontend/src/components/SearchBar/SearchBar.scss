@@ -9,7 +9,7 @@
       background-color: white;
       text-transform: capitalize;
 
-      @include sm{
+      @include sm {
         padding: 10px;
       }
       &.active {
@@ -58,7 +58,7 @@
           width: 200px;
         }
       }
-      @include sm{
+      @include sm {
         width: auto;
         &:nth-child(2),
         &:nth-child(3) {
@@ -68,17 +68,23 @@
         border: 1px solid #999;
       }
     }
-    button {
-      border: none;
-      cursor: pointer;
-      background-color: #fece51;
+    a {
       flex: 1;
-      img {
-        width: 24px;
-        height: 24px;
-      }
-      @include sm{
-        padding: 10px 20px;
+      background-color: #fece51;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      button {
+        border: none;
+        cursor: pointer;
+        background-color: #fece51;
+        img {
+          width: 24px;
+          height: 24px;
+        }
+        @include sm {
+          padding: 10px 20px;
+        }
       }
     }
   }

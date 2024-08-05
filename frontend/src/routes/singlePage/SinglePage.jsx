@@ -2,32 +2,34 @@ import './SinglePage.scss';
 import Slider from '../../components/Slider/Slider.jsx';
 import { singlePostData, userData } from "../../libraries/dummyData.js";
 import Map from "../../components/Map/Map.jsx";
+import { useLoaderData } from 'react-router-dom';
 
 function SinglePage() {
+    const data = useLoaderData();
     return (
         <div className='singlepage'>
             <div className="details">
                 <div className="wrapper">
-                    <Slider images={singlePostData.images} />
+                    <Slider images={data.images} />
                     <div className="info">
                         <div className="top">
                             <div className="post">
-                                <h1>{singlePostData.title}</h1>
+                                <h1>{data.title}</h1>
                                 <div className="address">
                                     <img src="/pin.png" />
-                                    <span>{singlePostData.address}</span>
+                                    <span>{data.address}</span>
                                 </div>
                                 <div className="price">
-                                    $ {singlePostData.price}
+                                    $ {data.price}
                                 </div>
                             </div>
                             <div className="user">
-                                <img src={userData.img} alt="" />
-                                <span>{userData.name}</span>
+                                <img src={data.user.avatar} alt="" />
+                                <span>{data.user.username}</span>
                             </div>
                         </div>
                         <div className="bottom">
-                            {singlePostData.description}
+                            <p>{data.postDetail.desc}</p>
                         </div>
                     </div>
                 </div>
@@ -42,7 +44,7 @@ function SinglePage() {
                             </div>
                             <div className="featuretext">
                                 <span>Utilities</span>
-                                <p>Renter is responsible</p>
+                                <p>{data.postDetail.utilities}</p>
                             </div>
                         </div>
                         <div className="feature">
@@ -51,7 +53,7 @@ function SinglePage() {
                             </div>
                             <div className="featuretext">
                                 <span>Pet Policy</span>
-                                <p>Pets allowed</p>
+                                <p>{data.postDetail.pet}</p>
                             </div>
                         </div>
                         <div className="feature">
@@ -68,15 +70,15 @@ function SinglePage() {
                     <div className="sizes">
                         <div className="size">
                             <img src="/size.png" alt="" />
-                            <span>80sqft</span>
+                            <span>{data.postDetail.size}</span>
                         </div>
                         <div className="size">
                             <img src="/bed.png" alt="" />
-                            <span>2 Beds</span>
+                            <span>{data.bedroom}</span>
                         </div>
                         <div className="size">
                             <img src="/bath.png" alt="" />
-                            <span>1 Bathrooms</span>
+                            <span>{data.bathroom}</span>
                         </div>
                     </div>
                     <p className='title'>Nearby Places</p>
@@ -87,7 +89,7 @@ function SinglePage() {
                             </div>
                             <div className="featuretext">
                                 <span>School</span>
-                                <p>250m away</p>
+                                <p>{data.postDetail.school}</p>
                             </div>
                         </div>
                         <div className="feature">
@@ -96,7 +98,7 @@ function SinglePage() {
                             </div>
                             <div className="featuretext">
                                 <span>Bus Stop</span>
-                                <p>110m away</p>
+                                <p>{data.postDetail.bus}</p>
                             </div>
                         </div>
                         <div className="feature">
@@ -105,13 +107,13 @@ function SinglePage() {
                             </div>
                             <div className="featuretext">
                                 <span>Restaurant</span>
-                                <p>300m away</p>
+                                <p>{data.postDetail.restaurant}</p>
                             </div>
                         </div>
                     </div>
                     <p className='title'>Location</p>
                     <div className="mapcontainer">
-                        <Map items={[singlePostData]} />
+                        <Map items={[data]} />
                     </div>
                     <div className="buttons">
                         <button>
