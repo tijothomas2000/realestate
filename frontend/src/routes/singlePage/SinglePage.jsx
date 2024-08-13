@@ -1,6 +1,6 @@
 import './SinglePage.scss';
 import Slider from '../../components/Slider/Slider.jsx';
-import { singlePostData, userData } from "../../libraries/dummyData.js";
+// import { singlePostData, userData } from "../../libraries/dummyData.js";
 import Map from "../../components/Map/Map.jsx";
 import { useLoaderData } from 'react-router-dom';
 

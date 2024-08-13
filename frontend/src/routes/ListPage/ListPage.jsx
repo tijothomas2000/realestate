@@ -7,6 +7,7 @@ import { Suspense } from 'react';
 
 export default function ListPage() {
     const data = useLoaderData();
+    console.log(data.postResponse.data);
     return (
         <div className='listpage'>
             <div className="listcontainer">

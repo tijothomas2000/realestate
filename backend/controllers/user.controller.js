@@ -68,3 +68,14 @@ export const deleteUser = async (req, res) => {
         res.status(500).json({ message: "Failed to delete the user." })
     }
 }
+export const savePost = async (req, res) => {
+    const postId = req.body.postId;
+    const tokenUserId = req.userId;
+    try {
+       
+        res.status(200).json({ message: "User deleted !" })
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: "Failed to delete the user." })
+    }
+}

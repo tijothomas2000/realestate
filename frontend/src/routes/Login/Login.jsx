@@ -50,7 +50,7 @@ export default function Login() {
                         required
                         placeholder="Password"
                     />
-                    <button disabled={isLoading}>Login</button>
+                    <button disabled={isLoading}>{`${isLoading?"Logging In ...":"Login"}`}</button>
                     {error && <span>{error}</span>}
                     <Link to="/register">{"Don't"} you have an account?</Link>
                 </form>

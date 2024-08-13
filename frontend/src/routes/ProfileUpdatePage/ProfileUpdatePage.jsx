@@ -22,6 +22,7 @@ export default function ProfileUpdatePage() {
         try {
             const res = await apiRequest.put(`/user/${currentUser.id}`, { username, email, password, avatar: avatar[0] });
             updateUser(res.data);
+            console.log(res.data);
             navigate('/profile');
         } catch (err) {
             console.log(err);
