@@ -8,7 +8,8 @@ import Register from './routes/Register/Register.jsx';
 import Login from './routes/Login/Login.jsx';
 import ProfileUpdatePage from './routes/ProfileUpdatePage/ProfileUpdatePage.jsx';
 import NewPostPage from './routes/NewPostPage/NewPostPage.jsx';
-import { listPageLoader, singlePageLoader } from './libraries/loaders.js';
+import { listPageLoader, singlePageLoader, profilePageLoader } from './libraries/loaders.js';
+
 
 function App() {
 
@@ -47,7 +48,8 @@ function App() {
       children: [
         {
           path: "/profile",
-          element: <ProfilePage />
+          element: <ProfilePage />,
+          loader: profilePageLoader
         },
         {
           path: "/profile/update",
