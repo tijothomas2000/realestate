@@ -18,7 +18,7 @@ function SinglePage() {
             navigate("/login");
         }
         try {
-            const res = await apiRequest.post("/user/save", { postId: data.id });
+            const res = await apiRequest.post("/api/user/save", { postId: data.id });
             console.log(res);
         } catch (err) {
             console.log(err);

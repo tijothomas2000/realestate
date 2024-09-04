@@ -20,7 +20,7 @@ export default function ProfileUpdatePage() {
         const password = formData.get("password");
 
         try {
-            const res = await apiRequest.put(`/user/${currentUser.id}`, { username, email, password, avatar: avatar[0] });
+            const res = await apiRequest.put(`/api/user/${currentUser.id}`, { username, email, password, avatar: avatar[0] });
             updateUser(res.data);
             console.log(res.data);
             navigate('/profile');

@@ -10,6 +10,7 @@ import userRoute from "./routes/user.route.js";
 dotenv.config();
 
 const app = express();
+const port = process.env.PORT || 8800;
 
 app.use(cors({ origin: process.env.CLIENT_URL, methods: 'GET,POST,PUT,DELETE,UPDATE', allowedHeaders: 'Content-Type, Authorization', credentials: true }));
 app.use(express.json());
@@ -20,6 +21,6 @@ app.use('/api/auth', authRoute);
 app.use('/api/test', testRoute);
 app.use('/api/user', userRoute);
 
-app.listen(8800, () => {
+app.listen(port, () => {
    console.log("Server is running !");
 });

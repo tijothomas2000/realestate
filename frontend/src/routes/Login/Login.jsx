@@ -19,7 +19,7 @@ export default function Login() {
         const username = formData.get("username");
         const password = formData.get("password");
         try {
-            const response = await apiRequest.post("/auth/login", {
+            const response = await apiRequest.post("/api/auth/login", {
                 username, password
             });
             updateUser(response.data);

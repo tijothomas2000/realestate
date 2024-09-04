@@ -19,7 +19,7 @@ function Register() {
     const email = formData.get("email");
     const password = formData.get("password");
     try {
-      const response = await apiRequest.post("/auth/register", {
+      const response = await apiRequest.post("/api/auth/register", {
         username, email, password
       });
       navigate("/login");

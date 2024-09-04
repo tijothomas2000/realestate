@@ -17,7 +17,7 @@ export default function NewPostPage() {
         const formData = new FormData(e.target);
         const inputs = Object.fromEntries(formData);
         try {
-            const res = await apiRequest.post("/post", {
+            const res = await apiRequest.post("/api/post", {
                 postData: {
                     title: inputs.title,
                     price: parseInt(inputs.price),
