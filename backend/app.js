@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8800;
 
-app.use(cors());
+app.use(cors({ origin: "*" }));
 // {
 //    origin: process.env.CLIENT_URL,
 //    methods: 'GET, HEAD, PUT, POST, PATCH, DELETE, OPTIONS',
