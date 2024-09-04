@@ -12,14 +12,13 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8800;
 
-app.use(cors(
-   {
-      origin: process.env.CLIENT_URL,
-      methods: 'GET, HEAD, PUT, POST, PATCH, DELETE, OPTIONS',
-      allowedHeaders: 'Access-Control-Allow-Headers, Origin, X-Requested-With, Content-Type, Accept, Authorization',
-      credentials: true
-   }
-));
+app.use(cors());
+// {
+//    origin: process.env.CLIENT_URL,
+//    methods: 'GET, HEAD, PUT, POST, PATCH, DELETE, OPTIONS',
+//    allowedHeaders: 'Access-Control-Allow-Headers, Origin, X-Requested-With, Content-Type, Accept, Authorization',
+//    credentials: true
+// }
 app.use(express.json());
 app.use(cookieParser());
 
