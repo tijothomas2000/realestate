@@ -22,6 +22,7 @@ function Register() {
       const response = await apiRequest.post("/api/auth/register", {
         username, email, password
       });
+      console.log(response);
       navigate("/login");
     } catch (err) {
       setError(err.response.data.message);

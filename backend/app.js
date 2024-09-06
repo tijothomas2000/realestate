@@ -10,9 +10,9 @@ import userRoute from "./routes/user.route.js";
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 8800;
+// const port = process.env.PORT || 8800;
 
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 // {
 //    origin: process.env.CLIENT_URL,
 //    methods: 'GET, HEAD, PUT, POST, PATCH, DELETE, OPTIONS',
@@ -27,6 +27,6 @@ app.use('/api/auth', authRoute);
 app.use('/api/test', testRoute);
 app.use('/api/user', userRoute);
 
-app.listen(port, () => {
+app.listen(8800, () => {
    console.log("Server is running !");
 });

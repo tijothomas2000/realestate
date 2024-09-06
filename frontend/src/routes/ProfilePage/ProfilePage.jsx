@@ -19,7 +19,7 @@ export default function ProfilePage() {
 
     async function handleLogout() {
         try {
-            await apiRequest.post("/auth/logout");
+            await apiRequest.post("/api/auth/logout");
             updateUser(null);
             navigate("/");
         } catch (err) {
